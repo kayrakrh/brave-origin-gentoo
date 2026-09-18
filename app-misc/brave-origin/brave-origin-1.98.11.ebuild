@@ -35,6 +35,6 @@ src_install() {
         doins -r "${WORKDIR}/usr/." || die
     fi
 
-    fperms +x /opt/brave.com/brave-origin-nightly/brave-browser-nightly
+    fperms +x /opt/brave.com/brave-origin-nightly/brave
     dosym /opt/brave.com/brave-origin-nightly/brave /usr/bin/brave-origin-nightly
 }
