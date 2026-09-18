@@ -3,7 +3,7 @@
 emerge --ask app-eselect/eselect-repository
 ```
 ```bash
-eselect repository add kayrakrh-overlay https://github.com/kayrakrh/brave-origin-gentoo.git
+eselect repository add kayrakrh-overlay git https://github.com/kayrakrh/brave-origin-gentoo.git
 ```
 ```
 emaint sync -r kayrakrh-overlay
