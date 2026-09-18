@@ -2,6 +2,7 @@
 ```bash
 emerge --ask app-eselect/eselect-repository
 ```
+```bash
 eselect repository add kayrakrh-overlay https://github.com/kayrakrh/brave-origin-gentoo.git
 ```
 ```
