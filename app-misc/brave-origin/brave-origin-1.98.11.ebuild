@@ -4,7 +4,7 @@ DESCRIPTION="Brave Origin Nightly Browser"
 HOMEPAGE="https://github.com/brave/brave-browser"
 
 SRC_URI="
-    https://github.com/brave/brave-browser/releases/download/v${PV}/brave-browser-nightly-${PV}-linux-amd64.zip
+    https://github.com/brave/brave-browser/releases/download/v${PV}/brave-origin-nightly-${PV}-linux-amd64.zip
     https://github.com/kayrakrh/brave-origin-gentoo/releases/download/Source/source.tar.gz
 "
 
