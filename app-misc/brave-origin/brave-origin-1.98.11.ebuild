@@ -17,23 +17,19 @@ RESTRICT="strip"
 S="${WORKDIR}"
 
 src_unpack() {
-    unpack "brave-browser-nightly-${PV}-linux-amd64.zip"
-    unpack "source.tar.gz"
-
-    mkdir "${WORKDIR}/gentoo-source" || die
-
-    tar -xf "${WORKDIR}/source.tar.gz" \
-        -C "${WORKDIR}/gentoo-source" || die
+    default
 }
 
 src_install() {
+    # Brave browser
     insinto /opt/brave.com/brave-origin-nightly
-    doins -r "${WORKDIR}/brave-browser-nightly-"*/*
+    doins -r "${WORKDIR}/brave-browser-nightly-${PV}/." || die
+
+    # Gentoo-maintained integration files
+    if [[ -d "${WORKDIR}/usr" ]]; then
+        insinto /usr
+        doins -r "${WORKDIR}/usr/." || die
+    fi
 
     fperms +x /opt/brave.com/brave-origin-nightly/brave
-
-    if [[ -d "${WORKDIR}/gentoo-source/usr" ]]; then
-        insinto /usr
-        doins -r "${WORKDIR}/gentoo-source/usr/"*
-    fi
 }
