@@ -21,11 +21,8 @@ src_unpack() {
 }
 
 src_install() {
-    # Brave Origin Nightly
     insinto /opt/brave.com/brave-origin-nightly
 
-    # ZIP'in tamamı WORKDIR köküne açılıyor.
-    # source.tar.gz'nin opt/ ve usr/ dizinlerini hariç tut.
     find "${WORKDIR}" -mindepth 1 -maxdepth 1 \
         ! -name opt \
         ! -name usr \
@@ -33,12 +30,11 @@ src_install() {
         -exec cp -a {} "${D}/opt/brave.com/brave-origin-nightly/" \; \
         || die
 
-    # Gentoo entegrasyon dosyaları
     if [[ -d "${WORKDIR}/usr" ]]; then
         insinto /usr
         doins -r "${WORKDIR}/usr/." || die
     fi
 
-    # Brave executable
     fperms +x /opt/brave.com/brave-origin-nightly/brave-browser-nightly
+    dosym /opt/brave.com/brave-origin-nightly/brave-browser-nightly /usr/bin/brave-origin-nightly
 }
