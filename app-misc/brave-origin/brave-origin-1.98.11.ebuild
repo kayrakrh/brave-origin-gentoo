@@ -36,5 +36,5 @@ src_install() {
     fi
 
     fperms +x /opt/brave.com/brave-origin-nightly/brave-browser-nightly
-    dosym /opt/brave.com/brave-origin-nightly/brave-browser-nightly /usr/bin/brave-origin-nightly
+    dosym /opt/brave.com/brave-origin-nightly/brave /usr/bin/brave-origin-nightly
 }
